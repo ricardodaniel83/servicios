@@ -39,7 +39,11 @@ router.get('/', function(req, res){
     res.json({message: 'Ándale, arriba arriba, yepa yepa'});
 });
 
+// rutas de acceso para las funciones del rest
 require('./routers/taxonomies')(router);
+require('./routers/comments')(router);
+require('./routers/proposals')(router);
+
 // Registrar las rutas con prefijo /api
 app.use('/api', router);
 

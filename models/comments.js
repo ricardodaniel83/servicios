@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
-var Users = mongoose.model('Users');
-var Proposals = mongoose.model('Proposals');
+//var Users = mongoose.model('Users');
+//var Proposals = mongoose.model('Proposals');
 
 var comments = new Schema({
 	description: String,

@@ -23,8 +23,22 @@ module.exports = function(router){
 		var objProposal = new Proposals();
 			objProposal.name = req.body.name;
 			objProposal.description = req.body.description;
-			objProposal.type = req.body.type;
+			objProposal.state = req.body.state;
+			objProposal.visitsAll = req.body.visitsAll;
+			objProposal.likeAll = req.body.likeAll;
+			objProposal.dislikeAll = req.body.dislikeAll;
+			objProposal.shareAll = req.body.favoriteAll;
+			objProposal.favoriteAll = req.body.favoriteAll;
+			objProposal.abvocacyAll = req.body.abvocacyAll;
+			objProposal.disagreementAll= req.body.disagreementAll;
+			objProposal.neutralAll = req.body.neutralAll;
 			objProposal.uid = req.body.uid;
+			objProposal.positionX = req.body.positionX;
+			objProposal.positionY = req.body.positionY;
+			objProposal.create = req.body.create;
+			objProposal.taxonomies = req.body.taxonomies;
+			objProposal.typedata = req.body.typedata;
+			objProposal.files = req.body.files;
 		
 		objProposal.save(function(err){
 			if(!err) res.json({message:'Taxonomia adicionada'});
@@ -38,7 +52,22 @@ module.exports = function(router){
 		Proposals.findById(req.params.id,function(err,objProposal){
 			objProposal.name = req.body.name;
 			objProposal.description = req.body.description;
-			objProposal.type= req.body.type;
+			objProposal.state = req.body.state;
+			objProposal.visitsAll = req.body.visitsAll;
+			objProposal.likeAll = req.body.likeAll;
+			objProposal.dislikeAll = req.body.dislikeAll;
+			objProposal.shareAll = req.body.favoriteAll;
+			objProposal.favoriteAll = req.body.favoriteAll;
+			objProposal.abvocacyAll = req.body.abvocacyAll;
+			objProposal.disagreementAll= req.body.disagreementAll;
+			objProposal.neutralAll = req.body.neutralAll;
+			objProposal.uid = req.body.uid;
+			objProposal.positionX = req.body.positionX;
+			objProposal.positionY = req.body.positionY;
+			objProposal.create = req.body.create;
+			objProposal.taxonomies = req.body.taxonomies;
+			objProposal.typedata = req.body.typedata;
+			objProposal.files = req.body.files;
 
 			objProposal.save(function(err){
 				if(!err) res.json({message:'Taxonomia Actualizada con exito'});
@@ -60,7 +89,7 @@ module.exports = function(router){
 	//API Routes
 	router.route('/Proposals').get(findAllProposals);
 	router.route('/Proposals').post(addProposal);
-	router.route('/Proposals/:id').get(findByIdProposal);
+	router.route('/Proposals/:id').get(findByIdProposals);
 	router.route('/Proposals/:id').put(updateProposal);
 	router.route('/Proposals/:id').delete(deleteProposal);
 }
