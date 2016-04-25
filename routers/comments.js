@@ -31,7 +31,7 @@ module.exports = function(router){
 			objComment.abvocacyAll = req.body.abvocacyAll;
 			objComment.disagreementAll= req.body.disagreementAll;
 			objComment.neutralAll = req.body.neutralAll;
-			objComment.uid = req.body.uid;
+			//objComment.uid = req.body.uid;
 			objComment.pid = req.body.pid;
 			objComment.positionX = req.body.positionX;
 			objComment.positionY = req.body.positionY;
@@ -57,7 +57,7 @@ module.exports = function(router){
 			objComment.abvocacyAll = req.body.abvocacyAll;
 			objComment.disagreementAll= req.body.disagreementAll;
 			objComment.neutralAll = req.body.neutralAll;
-			objComment.uid = req.body.uid;
+			//objComment.uid = req.body.uid;
 			objComment.pid = req.body.pid;
 			objComment.positionX = req.body.positionX;
 			objComment.positionY = req.body.positionY;
@@ -75,15 +75,15 @@ module.exports = function(router){
 	deleteComment = function(req,res){
 		Comments.findById(req.params.id,function(err,objComment){
 			objComment.remove(function(err){
-				if(!err) console.json({message:'Comentarios eliminada con exito'});
+				if(!err) res.json({message:'Comentarios eliminada con exito'});
 				else console.log('ERROR:'+err);
 			});
 		});
 	}
 	//API Routes
-	router.route('/Comments').get(findAllComments);
-	router.route('/Comments').post(addComment);
-	router.route('/Comments/:id').get(findByIdComment);
-	router.route('/Comments/:id').put(updateComment);
-	router.route('/Comments/:id').delete(deleteComment);
+	router.route('/comments').get(findAllComments);
+	router.route('/comments').post(addComment);
+	router.route('/comments/:id').get(findByIdComment);
+	router.route('/comments/:id').put(updateComment);
+	router.route('/comments/:id').delete(deleteComment);
 }

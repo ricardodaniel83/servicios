@@ -1,7 +1,7 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
-var usuario = new Schema({
+var users = new Schema({
 	name: String,
 	email: String,
 	pass: String,
@@ -11,4 +11,4 @@ var usuario = new Schema({
 	create: { type: Date, default: Date.now }
 });
 
-module.exports = mongoose.model('Usuarios', usuario);
+module.exports = mongoose.model('Users', users);

@@ -24,7 +24,7 @@ module.exports = function(router){
 			objTaxonomy.name = req.body.name;
 			objTaxonomy.description = req.body.description;
 			objTaxonomy.type = req.body.type;
-			objTaxonomy.uid = req.body.uid;
+			//objTaxonomy.uid = req.body.uid;
 		
 		objTaxonomy.save(function(err){
 			if(!err) res.json({message:'Taxonomia adicionada'});
@@ -34,17 +34,23 @@ module.exports = function(router){
 
 	//PUT UPDATE Id
 	updateTaxonomy = function(req,res){
-		console.log(req.body);
-		Taxonomies.findById(req.params.id,function(err,objTaxonomy){
+		//console.log(req.body);
+		//console.log(req.params.id);
+		Taxonomies.findByIdAndUpdate(req.params.id,req.body,function(err){
+			if(!err) res.json({message:'Taxonomia Actualizada con exito'});
+			else console.log('ERROR:'+err);
+		});
+
+		/*Taxonomies.findById(req.params.id,function(err,objTaxonomy){
 			objTaxonomy.name = req.body.name;
 			objTaxonomy.description = req.body.description;
 			objTaxonomy.type= req.body.type;
 
 			objTaxonomy.save(function(err){
-				if(!err) res.json({message:'Taxonomia Actualizada con exito'});
+				if(!err) console.log({message:'Taxonomia Actualizada con exito'});
 				else console.log('ERROR:'+err);
 			});
-		});
+		});*/
 	}
 
 	//DELETE 
@@ -52,7 +58,7 @@ module.exports = function(router){
 	deleteTaxonomy = function(req,res){
 		Taxonomies.findById(req.params.id,function(err,objTaxonomy){
 			objTaxonomy.remove(function(err){
-				if(!err) console.json({message:'Taxonomia eliminada con exito'});
+				if(!err) res.json({message:'Taxonomia eliminada con exito'});
 				else console.log('ERROR:'+err);
 			});
 		});

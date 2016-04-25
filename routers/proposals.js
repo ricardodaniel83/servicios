@@ -19,7 +19,7 @@ module.exports = function(router){
 	//POST
 	addProposal = function(req,res){
 		//console.log('POST');
-		//console.log(req.body);
+		console.log(req.body);
 		var objProposal = new Proposals();
 			objProposal.name = req.body.name;
 			objProposal.description = req.body.description;
@@ -32,13 +32,13 @@ module.exports = function(router){
 			objProposal.abvocacyAll = req.body.abvocacyAll;
 			objProposal.disagreementAll= req.body.disagreementAll;
 			objProposal.neutralAll = req.body.neutralAll;
-			objProposal.uid = req.body.uid;
+			//objProposal.uid = req.body.uid;
 			objProposal.positionX = req.body.positionX;
 			objProposal.positionY = req.body.positionY;
-			objProposal.create = req.body.create;
-			objProposal.taxonomies = req.body.taxonomies;
-			objProposal.typedata = req.body.typedata;
-			objProposal.files = req.body.files;
+			//objProposal.create = req.body.create;
+			//objProposal.taxonomies = req.body.taxonomies;
+			//objProposal.typedata = req.body.typedata;
+			//objProposal.files = req.body.files;
 		
 		objProposal.save(function(err){
 			if(!err) res.json({message:'Taxonomia adicionada'});
@@ -81,15 +81,15 @@ module.exports = function(router){
 	deleteProposal = function(req,res){
 		Proposals.findById(req.params.id,function(err,objProposal){
 			objProposal.remove(function(err){
-				if(!err) console.json({message:'Taxonomia eliminada con exito'});
+				if(!err) res.json({message:'Taxonomia eliminada con exito'});
 				else console.log('ERROR:'+err);
 			});
 		});
 	}
 	//API Routes
-	router.route('/Proposals').get(findAllProposals);
-	router.route('/Proposals').post(addProposal);
-	router.route('/Proposals/:id').get(findByIdProposals);
-	router.route('/Proposals/:id').put(updateProposal);
-	router.route('/Proposals/:id').delete(deleteProposal);
+	router.route('/proposals').get(findAllProposals);
+	router.route('/proposals').post(addProposal);
+	router.route('/proposals/:id').get(findByIdProposals);
+	router.route('/proposals/:id').put(updateProposal);
+	router.route('/proposals/:id').delete(deleteProposal);
 }

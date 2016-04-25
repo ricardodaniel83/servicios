@@ -17,13 +17,13 @@ var proposals = new Schema({
 	abvocacyAll: Number,
 	disagreementAll: Number,
 	neutralAll: Number,
-	uid: {type: Schema.ObjectId, ref: "Users"},
+	uid: {type: Schema.Types.ObjectId, ref: "Users"},
 	positionX: String,
 	positionY: String,
 	create: { type: Date, default: Date.now },
-	taxonomies: [{ type: Schema.ObjectId, ref: "Taxonomies"}],
-	typedata: [{type: Schema.ObjectId, ref: "Typedata"}],
-	files: [{type: Schema.ObjectId, ref: "Filemanaged"}]
+	taxonomies: [{ type: Schema.Types.ObjectId, ref: "Taxonomies"}],
+	//typedata: [{type: Schema.ObjectId, ref: "Typedata"}],
+	//files: [{type: Schema.ObjectId, ref: "Filemanaged"}]
 
 });
 

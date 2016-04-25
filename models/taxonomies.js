@@ -6,7 +6,8 @@ var taxonomies = new Schema({
 	name: String,
 	description: String,
 	type: String,
-	uid: {type: Schema.ObjectId, ref: "Usuarios" }
+	fid:{type: Schema.Types.ObjectId, ref: "Filemanaged"}
+	//uid: {type: Schema.Types.ObjectId, ref: "Users" }
 });
 
 module.exports = mongoose.model('Taxonomies', taxonomies);

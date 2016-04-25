@@ -14,8 +14,8 @@ var comments = new Schema({
 	abvocacyAll: Number,
 	disagreementAll: Number,
 	neutralAll: Number,
-	uid: {type: Schema.ObjectId, ref: "Users" },
-	pid: {type: Schema.ObjectId, ref: "Proposals"},
+	uid: {type: Schema.Types.ObjectId, ref: "Users" },
+	pid: {type:Schema.Types.ObjectId, ref:"Proposals"},
 	positionX: String,
 	positionY: String,
 	create: { type: Date, default: Date.now }
