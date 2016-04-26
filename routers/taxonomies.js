@@ -2,8 +2,8 @@ module.exports = function(router){
 	var Taxonomies = require('../models/taxonomies');
 	//GET
 	findAllTaxonomies = function(req, res){
-		Taxonomies.find(function(err,objTaxonomies){
-			if(!err) res.send(objTaxonomies);
+		Taxonomies.find({}).populate({path:'fbid'}).populate({path:'fhid'}).exec(function(err,taxonomy){
+			if(!err) res.json(taxonomy);
 			else console.log('ERROR:'+err);
 		});
 	}
@@ -15,6 +15,14 @@ module.exports = function(router){
 			else console.log('ERROR:'+err);
 		});
 	}
+	// GET LIST DE TAXONOMIES CON IMAGENES
+	/*listTaxonomyByFile = function(req,res){
+		Taxonomies.find({}).populate({path:'fbid'}).populate({path:'fhid'}).exec(function(err,taxonomy){
+			if(!err) res.json(taxonomy);
+			else console.log('ERROR:'+err);
+		});
+
+	}*/
 
 	//POST
 	addTaxonomy = function(req,res){
@@ -24,6 +32,9 @@ module.exports = function(router){
 			objTaxonomy.name = req.body.name;
 			objTaxonomy.description = req.body.description;
 			objTaxonomy.type = req.body.type;
+			objTaxonomy.column = req.body.column;
+			objTaxonomy.fbid = req.body.fbid;
+			objTaxonomy.fhid = req.body.fhid;
 			//objTaxonomy.uid = req.body.uid;
 		
 		objTaxonomy.save(function(err){
@@ -40,17 +51,6 @@ module.exports = function(router){
 			if(!err) res.json({message:'Taxonomia Actualizada con exito'});
 			else console.log('ERROR:'+err);
 		});
-
-		/*Taxonomies.findById(req.params.id,function(err,objTaxonomy){
-			objTaxonomy.name = req.body.name;
-			objTaxonomy.description = req.body.description;
-			objTaxonomy.type= req.body.type;
-
-			objTaxonomy.save(function(err){
-				if(!err) console.log({message:'Taxonomia Actualizada con exito'});
-				else console.log('ERROR:'+err);
-			});
-		});*/
 	}
 
 	//DELETE 
@@ -65,6 +65,7 @@ module.exports = function(router){
 	}
 	//API Routes
 	router.route('/taxonomies').get(findAllTaxonomies);
+	//router.route('/taxonomies/file').get(listTaxonomyByFile);
 	router.route('/taxonomies').post(addTaxonomy);
 	router.route('/taxonomies/:id').get(findByIdTaxonomy);
 	router.route('/taxonomies/:id').put(updateTaxonomy);

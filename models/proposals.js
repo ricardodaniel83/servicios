@@ -1,6 +1,6 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
-//var Taxonomies = mongoose.model('Taxonomies');
+var Taxonomies = mongoose.model('Taxonomies');
 //var Typedata = mongoose.model('Typedata');
 //var Users = mongoose.model('Users');
 //var Filemanaged = mongoose.model('Filemanaged');
@@ -21,7 +21,7 @@ var proposals = new Schema({
 	positionX: String,
 	positionY: String,
 	create: { type: Date, default: Date.now },
-	taxonomies: [{ type: Schema.Types.ObjectId, ref: "Taxonomies"}],
+	tid: { type: Schema.Types.ObjectId, ref: "Taxonomies"}
 	//typedata: [{type: Schema.ObjectId, ref: "Typedata"}],
 	//files: [{type: Schema.ObjectId, ref: "Filemanaged"}]
 

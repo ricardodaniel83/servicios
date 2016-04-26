@@ -1,12 +1,15 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 //var Users = mongoose.model('Usuarios');
+//var File = mongoose.model('Filemanaged');
 
 var taxonomies = new Schema({
 	name: String,
 	description: String,
 	type: String,
-	fid:{type: Schema.Types.ObjectId, ref: "Filemanaged"}
+	column: Number,
+	fbid:{type: Schema.Types.ObjectId, ref: "Filemanaged"},
+	fhid:{type: Schema.Types.ObjectId, ref: "Filemanaged"}
 	//uid: {type: Schema.Types.ObjectId, ref: "Users" }
 });
 

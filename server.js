@@ -41,6 +41,7 @@ router.get('/', function(req, res){
 });
 
 // rutas de acceso para las funciones del rest
+require('./routers/fileManaged')(router);
 require('./routers/taxonomies')(router);
 require('./routers/comments')(router);
 require('./routers/proposals')(router);

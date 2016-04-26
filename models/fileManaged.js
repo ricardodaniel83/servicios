@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 var filemanaged = new Schema({
-	filename: String, //nombre
+	filename: String, //nombre 1WEB.jpg
 	uri: String, // url  public://slider/1WEB.jpg
 	filemine: String,  // extencion jpg png pdf ...
 	filesize: Number,  //tamaño kb
