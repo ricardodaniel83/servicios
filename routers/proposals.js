@@ -16,9 +16,12 @@ module.exports = function(router){
 				else console.log('ERROR:'+err);
 			});
 	}
+
 	countProposalTaxonomy = function(req,res){
 		Proposals.find({tid:req.params.id}).count(function(err,count){
-				if(!err) res.json(count);
+				if(!err){
+						res.json({data:count});
+				} 
 				else console.log('ERROR:'+err);
 		});
 	}
