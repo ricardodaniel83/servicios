@@ -1,14 +1,6 @@
 module.exports = function(router){
 	var FileManaged = require('../models/filemanaged');
 	
-
-	//GET
-	findAllFileManaged = function(req, res){
-		FileManaged.find(function(err,objFileManaged){
-			if(!err) res.send(objFileManaged);
-			else console.log('ERROR:'+err);
-		});
-	}
 	//GET Id
 	findByIdFileManaged = function(req,res){
 		console.log('entre');
@@ -45,27 +37,8 @@ module.exports = function(router){
 		});
 	}
 
-	//DELETE 
-
-	deleteFileManaged= function(req,res){
-		FileManaged.findById(req.params.id,function(err,objFileManaged){
-			objFileManaged.remove(function(err){
-				if(!err) res.json({message:'Archivo eliminada con exito'});
-				else console.log('ERROR:'+err);
-			});
-		});
-	}
 	//API Routes
-	/*router.route('/taxonomies').get(findAllTaxonomies);
-	router.route('/taxonomies/FileManaged').get(listTaxonomyByFileManaged);
-	router.route('/taxonomies').post(addTaxonomy);
-	router.route('/taxonomies/:id').get(findByIdTaxonomy);
-	*/
-
-
-	router.route('/filemanaged').get(findAllFileManaged);
 	router.route('/filemanaged').post(addFileManaged);
 	router.route('/filemanaged/:id').get(findByIdFileManaged);
 	router.route('/filemanaged/:id').put(updateFileManaged);
-	router.route('/filemanaged/:id').delete(deleteFileManaged);
 }

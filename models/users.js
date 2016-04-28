@@ -2,12 +2,13 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
 var users = new Schema({
-	name: String,
+	username: String,
 	email: String,
-	pass: String,
-	status: String,
+	password: String,
+	state: String,
 	positionX: String,
 	positionY: String,
+	picture :{type: Schema.Types.ObjectId, ref: "Filemanaged"},
 	create: { type: Date, default: Date.now }
 });
 

@@ -42,9 +42,12 @@ router.get('/', function(req, res){
 
 // rutas de acceso para las funciones del rest
 require('./routers/fileManaged')(router);
+require('./routers/users')(router);
 require('./routers/taxonomies')(router);
 require('./routers/comments')(router);
 require('./routers/proposals')(router);
+require('./routers/data_proposal')(router);
+require('./routers/data_comments')(router);
 
 // Registrar las rutas con prefijo /api
 app.use('/api', router);
