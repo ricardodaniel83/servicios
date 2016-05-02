@@ -1,0 +1,50 @@
+.content-menu{
+	padding: 0px !important; 
+	margin:0px !important;
+	position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #200b00;
+    border-right: 1px solid #eee;
+}
+
+.content-menu a{
+	color:#fff;
+}
+
+.content-menu a:hover{
+	background-color:#752900 !important;
+}
+.content-menu li a{
+	border-bottom:1px solid #444;
+}
+
+.content-main{
+	background: #f7f7f7;	
+}
+/********* Botones de Tablas ***********/
+
+.verde{
+   color: #449D44;
+}
+
+.tomate{
+   color: #fd5900
+}
+
+.azul{
+    color:#007299;
+}
+.font-size-18{
+    font-size:18px;
+}
+/********* NEW PROPUESTAS ************/
+.form-group {
+    margin-bottom: 10px !important;
+}

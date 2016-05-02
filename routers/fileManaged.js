@@ -38,7 +38,7 @@ module.exports = function(router){
 	}
 
 	//API Routes
-	router.route('/filemanaged').post(addFileManaged);
-	router.route('/filemanaged/:id').get(findByIdFileManaged);
-	router.route('/filemanaged/:id').put(updateFileManaged);
+	router.route('/api/filemanaged').post(addFileManaged);
+	router.route('/api/filemanaged/:id').get(findByIdFileManaged);
+	router.route('/api/filemanaged/:id').put(updateFileManaged);
 }

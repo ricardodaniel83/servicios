@@ -64,10 +64,10 @@ module.exports = function(router){
 		});
 	}
 	//API Routes
-	router.route('/taxonomies').get(findAllTaxonomies);
+	router.route('/api/taxonomies').get(findAllTaxonomies);
 	//router.route('/taxonomies/file').get(listTaxonomyByFile);
-	router.route('/taxonomies').post(addTaxonomy);
-	router.route('/taxonomies/:id').get(findByIdTaxonomy);
-	router.route('/taxonomies/:id').put(updateTaxonomy);
-	router.route('/taxonomies/:id').delete(deleteTaxonomy);
+	router.route('/api/taxonomies').post(addTaxonomy);
+	router.route('/api/taxonomies/:id').get(findByIdTaxonomy);
+	router.route('/api/taxonomies/:id').put(updateTaxonomy);
+	router.route('/api/taxonomies/:id').delete(deleteTaxonomy);
 }

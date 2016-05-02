@@ -21,6 +21,6 @@ module.exports = function(router){
 		});
 	}
 	//API Routes
-	router.route('/datacomment').post(addDataComment);
-	router.route('/datacomment/:id').put(updateDataComment);
+	router.route('/api/datacomment').post(addDataComment);
+	router.route('/api/datacomment/:id').put(updateDataComment);
 }

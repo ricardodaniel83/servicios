@@ -3,6 +3,9 @@
 // paquetes necesarios
 
 var express = require('express');
+var path = require('path');
+var partials = require('express-partials');
+var favicon = require('serve-favicon');
 var app = express(); // Instancia del servidor express
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -12,11 +15,16 @@ mongoose.connect('mongodb://localhost/mi_propuesta', function(err,res){
 	else console.log('Conexión a la BD realizada');
 });
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+app.use(partials());
 // Configurar app para usar bodyParser
 // con este paquete obtendremos
 // los datos enviados por POST
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // puerto del servidor
@@ -36,9 +44,11 @@ router.use(function(req, res, next) {
 });
 
 // ruta para probar nuestro servidor
-router.get('/', function(req, res){
+/*router.get('/', function(req, res){
     res.json({message: 'Ándale, arriba arriba, yepa yepa'});
-});
+});*/
+
+
 
 // rutas de acceso para las funciones del rest
 require('./routers/fileManaged')(router);
@@ -48,9 +58,10 @@ require('./routers/comments')(router);
 require('./routers/proposals')(router);
 require('./routers/data_proposal')(router);
 require('./routers/data_comments')(router);
+require('./routers/index')(router);
 
 // Registrar las rutas con prefijo /api
-app.use('/api', router);
+app.use('/', router);
 
 // Iniciar servidor
 app.listen(port);

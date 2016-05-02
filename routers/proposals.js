@@ -83,11 +83,11 @@ module.exports = function(router){
 		});
 	}
 	//API Routes
-	router.route('/proposals').get(findAllProposals);
-	router.route('/proposals/:id/taxonomy').get(listProposalTaxonomy);
-	router.route('/proposals/:id/taxonomy/count').get(countProposalTaxonomy);
-	router.route('/proposals').post(addProposal);
-	router.route('/proposals/:id').get(findByIdProposals);
-	router.route('/proposals/:id').put(updateProposal);
-	router.route('/proposals/:id').delete(deleteProposal);
+	router.route('/api/proposals').get(findAllProposals);
+	router.route('/api/proposals/:id/taxonomy').get(listProposalTaxonomy);
+	router.route('/api/proposals/:id/taxonomy/count').get(countProposalTaxonomy);
+	router.route('/api/proposals').post(addProposal);
+	router.route('/api/proposals/:id').get(findByIdProposals);
+	router.route('/api/proposals/:id').put(updateProposal);
+	router.route('/api/proposals/:id').delete(deleteProposal);
 }

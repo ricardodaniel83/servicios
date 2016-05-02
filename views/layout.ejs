@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mi propuesta</title>
+    <link href="/stylesheets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/stylesheets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/stylesheets/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <link href="/stylesheets/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/custom.css' />
+   
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body  class="nav-md">
+  <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+              <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span> Mi Propuesta</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="profile">
+              <div class="profile_pic">
+                <img src="/images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Bienvenido</span>
+                <h2>Daniel Proano</h2>
+              </div>
+            </div>
+
+            <br />
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                <li>
+                  <a><i class="fa fa-home" ></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/">inicio</a> </li>
+                      <li><a href="index.html">Que hacemos</a> </li>
+                      <li><a href="index2.html">Ayuda</a>
+                      </li>
+                      <li><a href="index3.html">Contactenos</a>
+                      </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/login"><i class="fa fa-sign-in" ></i> Login</a>
+                </li>
+                <li>
+                    <a><i class="fa fa-users"></i> Usuarios <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/users">Usuarios</a>
+                      </li>
+                      <li><a href="index2.html">Permisos</a>
+                      </li>
+                      <li><a href="index3.html">Roles</a>
+                      </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/proposals"><i class="fa fa-list-ul" ></i> Propuesta <span class="fa fa-chevron-down"></span></a>
+                </li>
+                  <li>
+                    <a href="/taxonomies"><i class="fa fa-tags"></i> Categorías <span class="fa fa-chevron-down"></span></a>
+                </li>
+                  <li>
+                    <a><i class="fa fa-comments"></i> Comentarios <span class="fa fa-chevron-down"></span></a>
+                </li>
+                  <li>
+                    <a><i class="fa fa-envelope"></i> Notificaciones <span class="fa fa-chevron-down"></span></a>
+                </li>
+                </li>
+                  
+                </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="right_col" role="main">
+          <div class="">
+              <%- body %>
+          </div>
+      </div>
+
+  </div>  
+</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap/bootstrap.min.js"></script>
+    <script src="/stylesheets/bootstrap-progressbar/bootstrap-progressbar.js"></script>
+    <script src="/stylesheets/iCheck/icheck.min.js"></script>
+    <script src="/javascripts/custom.js"></script>
+    <script src="/javascripts/mi_porpuesta.js"></script>
+  </body>
+</html>

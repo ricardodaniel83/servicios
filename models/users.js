@@ -6,9 +6,11 @@ var users = new Schema({
 	email: String,
 	password: String,
 	state: String,
+	active: Number,
 	positionX: String,
 	positionY: String,
 	picture :{type: Schema.Types.ObjectId, ref: "Filemanaged"},
+	//uid: {type: Schema.Types.ObjectId, ref: "Users" }
 	create: { type: Date, default: Date.now }
 });
 

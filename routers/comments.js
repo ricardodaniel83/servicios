@@ -81,9 +81,9 @@ module.exports = function(router){
 		});
 	}
 	//API Routes
-	router.route('/comments').get(findAllComments);
-	router.route('/comments').post(addComment);
-	router.route('/comments/:id').get(findByIdComment);
-	router.route('/comments/:id').put(updateComment);
-	router.route('/comments/:id').delete(deleteComment);
+	router.route('/api/comments').get(findAllComments);
+	router.route('/api/comments').post(addComment);
+	router.route('/api/comments/:id').get(findByIdComment);
+	router.route('/api/comments/:id').put(updateComment);
+	router.route('/api/comments/:id').delete(deleteComment);
 }

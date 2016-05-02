@@ -58,9 +58,9 @@ module.exports = function(router){
 		});
 	}
 
-	router.route('/users').post(addUser);
-	router.route('/users/:id').get(findByIdUser);
-	router.route('/users/validate/:username/:pass').get(validateUser);
+	router.route('/api/users').post(addUser);
+	router.route('/api/users/:id').get(findByIdUser);
+	router.route('/api/users/validate/:username/:pass').get(validateUser);
 	//router.route('/users/pass').post(validateUser);
-	router.route('/users/:id').put(updateUser);
+	router.route('/api/users/:id').put(updateUser);
 }

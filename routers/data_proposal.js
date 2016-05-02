@@ -21,6 +21,6 @@ module.exports = function(router){
 		});
 	}
 	//API Routes
-	router.route('/dataproposal').post(addDataProposal);
-	router.route('/dataproposal/:id').put(updateDataProposal);
+	router.route('/api/dataproposal').post(addDataProposal);
+	router.route('/api/dataproposal/:id').put(updateDataProposal);
 }

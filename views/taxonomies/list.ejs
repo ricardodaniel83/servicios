@@ -1,0 +1,60 @@
+<div class="row">
+
+	<div clas="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2> Categorías </h2>
+				<ul class="nav navbar-right panel_toolbox">
+                      <li><a class="new-link-modal" href="/taxonomy/new"><i class="fa fa-plus-circle tomate" ></i></a>
+                      </li>
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                </ul>
+                <div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<div class="table-responsive">
+					<table class="table table-striped jambo_table bulk_action">
+						<thead>
+							<tr class="headings"> 
+								<th class="column-title">Titulo</th>
+								<th class="column-title">Tipo</th>
+								<th class="column-title">Estado</th>
+								<th class="column-title">Autor</th>
+								<th class="column-title">Fecha</th>
+								<th class="column-title">Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% list.forEach(function(item){ %>
+							<tr class="even pointer">
+								<td><%= item.name %></td>
+								<td><%= item.type %></td>
+								<td><% if(item.state == 1){ %> On <% }else{ %> Off <% }%> </td>
+								<td></td>
+								<td></td>
+								<td>
+									<ul class="nav navbar-right panel_toolbox">
+                      					<li>
+                      						<a class="" href="/taxonomy/update/<%= item._id %>">
+                      							<i class="fa fa-pencil-square-o azul font-size-18"></i>
+                      					</a>
+                      					</li>
+                      					<li>
+                      						<a class="" href="/taxonomy/delete/<%= item._id %>">
+                      							<i class="fa fa-trash red font-size-18"></i>
+                      					</a>
+                      					</li>
+                					</ul>
+								</td>
+							</tr>
+							<% }) %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
